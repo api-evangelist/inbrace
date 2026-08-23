@@ -64,5 +64,18 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-InBrace is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/inbrace_stock/
+InBrace was the lingual orthodontics brand of Swift Health Systems, Inc., an Irvine, California medical-device company co-founded in 2012 by orthodontists John Pham and Hongsheng Tong. Its patented INBRACE Smartwires were programmed from digital scans of a patient's teeth and bonded behind the teeth, moving teeth continuously without relying on patient compliance; the product reached market in 2016 and was sold to orthodontic practices through a doctor-facing case-submission portal at portal.inbrace.com rather than through any public developer program. The company raised roughly $70 million in total, including a $45 million Series C led by Vivo Capital with Novo Holdings and venBio Partners in 2019. InBrace ceased operations in April 2025, citing tightening capital markets and slower-than-expected adoption, leaving providers with cases mid-treatment. Its intellectual property, production equipment and manufacturing assets were acquired by orthodontist Dr. Scott Schwartz, who relaunched the technology in August 2025 as InSmile Braces — an independent company operated by Lorelli Technologies and explicitly separate from InBrace. As of this profile inbrace.com and portal.inbrace.com 301-redirect wholesale to insmilebraces.com, so no InBrace-origin content is served from any host. InBrace never published an API, SDK, developer portal or machine-readable specification, and none is served today.
+
+**Status:** defunct — Swift Health Systems, Inc. (InBrace) ceased operations in April 2025.
+The InBrace intellectual property and manufacturing assets were acquired by Dr. Scott Schwartz
+and relaunched in August 2025 as **InSmile Braces** (Lorelli Technologies), an independent
+company that is not a continuation of Swift Health Systems, Inc. Nothing on
+`insmilebraces.com` is profiled here, because it belongs to that separate company.
+
+**API surface:** none. Contract discovery was run against `inbrace.com` and the surviving
+`portal.inbrace.com` (now `portal.insmilebraces.com`): no OpenAPI, Swagger, GraphQL SDL,
+AsyncAPI, MCP endpoint, A2A agent card, `llms.txt` or `.well-known` document is served.
+Every path on `inbrace.com` returns HTTP 301 into `insmilebraces.com`.
+
+- Website (301 → insmilebraces.com): https://inbrace.com/
+- Secondary-market listing: https://forgeglobal.com/inbrace_stock/

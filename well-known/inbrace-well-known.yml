@@ -1,0 +1,78 @@
+generated: '2026-08-23'
+method: probed
+source: >-
+  Direct HTTPS probes of every /.well-known/ path in the enrichment contract against the
+  only host InBrace ever operated (inbrace.com) and against the doctor portal host
+  (portal.inbrace.com). No redirects were followed, so each status below is the status the
+  InBrace host itself returned.
+note: >-
+  NO DOCUMENT WAS SERVED. Swift Health Systems, Inc. (InBrace) ceased operations in April
+  2025; inbrace.com now answers HTTP 301 on every path and redirects wholesale to
+  https://insmilebraces.com/, the site of InSmile Braces — a separate company operated by
+  Lorelli Technologies that acquired the InBrace IP and relaunched the technology in August
+  2025. portal.inbrace.com resolves to portal.insmilebraces.com, a React single-page
+  application that answers HTTP 200 with the same 1,276-byte HTML app shell for EVERY
+  /.well-known/* path; those 200s are an SPA catch-all, not documents, and are recorded as
+  misses. Because nothing was served, NO `WellKnown` and NO `SecurityTxt` pointer is wired
+  into apis.yml — this file records a verified absence, not a presence.
+hosts:
+- host: inbrace.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 301
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    file: null
+  - path: /.well-known/api-catalog
+    status: 301
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 301
+    file: null
+  - path: /.well-known/agent.json
+    status: 301
+    file: null
+- host: portal.inbrace.com
+  note: >-
+    Resolves to portal.insmilebraces.com. Every 200 below returned the identical
+    1,276-byte React app shell (Content-Type text/html), i.e. a single-page-application
+    catch-all — not a well-known document. Treated as a miss.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    body: html-spa-shell
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    body: html-spa-shell
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    body: html-spa-shell
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    file: null
+    body: html-spa-shell
+  - path: /.well-known/api-catalog
+    status: 401
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    body: html-spa-shell
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    body: html-spa-shell
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    body: html-spa-shell

@@ -1,17 +1,43 @@
 aid: inbrace
 name: InBrace
-description: 'InBrace is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'InBrace was the lingual orthodontics brand of Swift Health Systems, Inc.,
+  an Irvine, California medical-device company co-founded in 2012 by orthodontists John
+  Pham and Hongsheng Tong. Its patented INBRACE Smartwires were programmed from digital
+  scans of a patient''s teeth and bonded behind the teeth, moving teeth continuously
+  without relying on patient compliance; the product reached market in 2016 and was sold
+  to orthodontic practices through a doctor-facing case-submission portal at
+  portal.inbrace.com rather than through any public developer program. The company raised
+  roughly $70 million in total, including a $45 million Series C led by Vivo Capital with
+  Novo Holdings and venBio Partners in 2019. InBrace ceased operations in April 2025,
+  citing tightening capital markets and slower-than-expected adoption, leaving providers
+  with cases mid-treatment. Its intellectual property, production equipment and
+  manufacturing assets were acquired by orthodontist Dr. Scott Schwartz, who relaunched
+  the technology in August 2025 as InSmile Braces — an independent company operated by
+  Lorelli Technologies and explicitly separate from InBrace. As of this profile inbrace.com
+  and portal.inbrace.com 301-redirect wholesale to insmilebraces.com, so no InBrace-origin
+  content is served from any host. InBrace never published an API, SDK, developer portal or
+  machine-readable specification, and none is served today.'
 url: https://raw.githubusercontent.com/api-evangelist/inbrace/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
+x-status: defunct
+x-ceased: '2025-04'
+x-successor-brand: InSmile Braces (Lorelli Technologies) — acquired the InBrace IP and
+  assets; an independent company, not a continuation of Swift Health Systems, Inc.
 x-tier: stub
 x-tier-reason: harvest
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-08-23'
 modified: '2026-08-23'
 tags:
 - Company
+- Orthodontics
+- Dental
+- Medical Devices
+- Health
+- Lingual Braces
+- Consumer Health
+- Defunct
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +45,37 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/inbrace-domain-security.yml
 - type: Website
+  url: https://inbrace.com/
+- type: SecondaryMarket
   url: https://forgeglobal.com/inbrace_stock/
+x-enrichment:
+  date: '2026-08-23'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Swift Health Systems, Inc. (InBrace) ceased operations in April 2025 and every path on
+    inbrace.com — apex, /.well-known/*, /openapi.json, /llms.txt, /docs, /api — now answers
+    HTTP 301 into insmilebraces.com, the site of InSmile Braces, the separate company that
+    bought the IP; the surviving portal host is a login-gated React app whose only backend
+    is an internal /api/ path, so there is no InBrace-owned contract left to read.
+  evidence:
+  - url: https://inbrace.com/
+    status: 301
+  - url: https://inbrace.com/openapi.json
+    status: 301
+  - url: https://inbrace.com/.well-known/agent-card.json
+    status: 301
+  - url: https://www.insmilebraces.com/openapi.json
+    status: 404
+  - url: https://www.insmilebraces.com/llms.txt
+    status: 404
+  - url: https://portal.insmilebraces.com/openapi.json
+    status: 401
+  checked: '2026-08-23'

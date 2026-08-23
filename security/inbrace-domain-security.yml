@@ -1,0 +1,24 @@
+generated: '2026-08-23'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: inbrace.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 16 17:33:38 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+  note: >-
+    inbrace.com resolves to Cloudflare and answers HTTP 301 on every path probed
+    (apex, /.well-known/*, /openapi.json, /llms.txt, /docs, /api), redirecting wholesale
+    to https://insmilebraces.com/ — the site of InSmile Braces, the separate company that
+    acquired the InBrace IP after Swift Health Systems, Inc. ceased operations in April
+    2025. The TLS/HSTS/DNS posture recorded here therefore describes the domain as it is
+    operated today by the successor, not any surviving InBrace origin.
+domains:
+- domain: inbrace.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none
