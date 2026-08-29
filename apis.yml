@@ -26,6 +26,17 @@ x-successor-brand: InSmile Braces (Lorelli Technologies) — acquired the InBrac
   assets; an independent company, not a continuation of Swift Health Systems, Inc.
 x-tier: stub
 x-tier-reason: harvest
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 specificationVersion: '0.23'
 created: '2026-08-23'
 modified: '2026-08-23'
